@@ -1,0 +1,110 @@
+* {
+ font-family:sans-serif;
+}
+
+body {
+ background-color: #000000;
+ opacity: 1;
+ background-image:  linear-gradient(30deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(150deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(30deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(150deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(60deg, #56336477 25%, transparent 25.5%, transparent 75%, #56336477 75%, #56336477), linear-gradient(60deg, #56336477 25%, transparent 25.5%, transparent 75%, #56336477 75%, #56336477);
+ background-size: 80px 140px;
+ background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.form-container {
+  height:400px;
+  width:350px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  top:50%;
+  left:50%;
+  position:absolute;
+  transform: translate(-50%,-50%);
+  box-sizing:border-box;
+  text-align:center;
+  display:flex;
+}
+.icon-container {
+  position:absolute;
+  width:150px;
+  height:150px;
+  text-align:center;
+  left:77.5px; 
+  top:-70px;
+}
+#icon {
+  background:black;
+  color:white;
+  border-radius:100%;
+  font-size:150px;
+}
+input[type=text],input[type=password]{
+  outline:none;
+  border:none;
+  color:white;
+  font-size:20px;
+  padding:5px;
+
+  background: #563364;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 0px );
+  -webkit-backdrop-filter: blur( 0px );
+  border-radius: 30px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );	
+}
+input[type=text]{
+  margin-top:150px;
+}
+input[type=password]{
+  margin-top:5px;
+}
+.form-container div {
+ text-align:left;
+ margin-left:20px;
+}
+.form-container div a{ 
+ text-decoration:none;
+ padding:5px;
+ color:white;
+}
+button {
+  margin-top:25px;
+  padding:2.5px 5px;
+  border-radius:10px;
+  width:200px;
+  font-size:20px;
+
+  border:none;
+  text-align:center;
+  display:inline-block;
+  transition-duration:0.4s;
+  cursor:pointer;
+
+  background: rgba( 0, 0, 0, 0.75 );
+  color:white;
+  backdrop-filter: blur( 0px );
+  -webkit-backdrop-filter: 
+  blur( 0px );
+  border: 4px solid rgba(31,38,135,0.37);
+ 
+}
+button:hover {
+  background-color: #5F0087;
+  color:white;
+  backdrop-filter: blur( 0px );
+  -webkit-backdrop-filter: 
+  blur( 0px );
+  border: 4px solid rgba(0,0,0,0.1);
+}
+button:hover #icon{
+	/*hacer que esta mierda funcione*/
+  background-color: #5F0087;
+  color:black;
+}
+
+
+

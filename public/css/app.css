@@ -1,0 +1,64 @@
+* {
+ font-family:sans-serif;
+}
+
+body {
+ background-color: #000000;
+ opacity: 1;
+ background-image:  linear-gradient(30deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(150deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(30deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(150deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(60deg, #56336477 25%, transparent 25.5%, transparent 75%, #56336477 75%, #56336477), linear-gradient(60deg, #56336477 25%, transparent 25.5%, transparent 75%, #56336477 75%, #56336477);
+ background-size: 80px 140px;
+ background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.navbar {
+ background-color: white;
+ border-radius: 45px;
+ padding:5px;
+ display:flex;
+ width:900px;
+ transform:translateX(25%); /*corregir despues*/
+ border-radius: 35px;
+}
+
+.navbar span {
+ font-size:20px;
+ margin-top:15.5px;
+ padding-left:20px;
+ padding-bottom:15.5px;
+}
+.menu a {
+ text-decoration:none;
+ background: linear-gradient(to right,black,black 50%, royalblue 50%);
+ background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-size: 200% 100%;
+ background-position: 100%;
+ transition: background-position 275ms ease;
+ text-decoration: none; // text decorations are clipped in WebKit browsers;
+}
+.menu a:hover {
+ background-position: 0 100%;
+}
+/*Iconos*/
+.icon-container {
+ margin-left:840px;
+ position:absolute;
+}
+
+#salir {
+ text-decoration:none;
+ background-color:white;
+ padding: 15px;
+ border: 2px solid red;
+ border-radius:35px;
+ color:red;
+ transition-duration:0.4s;
+ cursor:pointer;
+ font-size:25px;
+
+}
+#salir:hover {
+ background-color:red;
+ color:white;
+}

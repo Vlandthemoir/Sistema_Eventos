@@ -1,0 +1,48 @@
+* {
+ font-family:sans-serif;
+}
+
+body {
+ background-color: #000000;
+ opacity: 1;
+ background-image:  linear-gradient(30deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(150deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(30deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(150deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(60deg, #56336477 25%, transparent 25.5%, transparent 75%, #56336477 75%, #56336477), linear-gradient(60deg, #56336477 25%, transparent 25.5%, transparent 75%, #56336477 75%, #56336477);
+ background-size: 80px 140px;
+ background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.navbar {
+ background-color: white;
+ border-radius: 45px;
+ padding:5px;
+ display:flex;
+ width:900px;
+ transform:translateX(25%); /*corregir despues*/
+}
+
+.navbar div {
+ font-size:20px;
+ width:200px;
+ display:flex;
+ margin-left:10px;
+}
+.navbar div a {/*esto es temporal corregirlo*/
+ text-decoration:none;
+ color:black;
+}
+
+#close {
+ text-decoration:none;
+ background-color:white;
+ padding: 15px;
+ border: 2px solid red;
+ border-radius:35px;
+ color:red;
+ transition-duration:0.4s;
+ cursor:pointer;
+ font-size:25px;
+ margin-left:590px;
+}
+#close:hover {
+ background-color:red;
+ color:white;
+}
