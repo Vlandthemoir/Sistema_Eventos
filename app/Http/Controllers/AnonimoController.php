@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Paquete;
 
 class AnonimoController extends Controller
 {
@@ -13,7 +14,7 @@ class AnonimoController extends Controller
      */
     public function index()
     {
-        //
+	    $datos  =
     }
 
     /**

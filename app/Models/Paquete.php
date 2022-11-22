@@ -5,17 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model
+class Paquete extends Model
 {
 	use HasFactory;
 
 	protected $fillable = [
 		'nombre',
-		'correo',
-		'contrasena',
+		'descripcion',
+		'precio',
+		'foto',
 	];
-	protected $table = 'usuarios';
-	const CREATED_AT = 'fecha_creado';
-	const UPDATED_AT = 'fecha_actualizado';
-
 }

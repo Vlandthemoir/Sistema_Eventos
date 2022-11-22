@@ -13,7 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+	    Schema::create('paquetes',function(Blueprint $table){
+		    $table->id();
+		    $table->string('nombre')->unique();
+		    $table->string('descripcion');
+		    $table->string('precio');
+		    $table->string('foto');
+	    });	    
     }
 
     /**
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+	    Schema::dropIfExists('paquetes');
     }
 };

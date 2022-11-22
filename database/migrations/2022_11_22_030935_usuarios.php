@@ -13,7 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+	    Schema::create('usuarios', function (Blueprint $table){
+		    $table->id();
+		    $table->string('nombre')->unique();
+		    $table->string('correo')->unique();
+		    $table->string('contrasena');
+		    $table->string('rol')->default('Cliente');
+		    $table->timestamps();
+	    });
     }
 
     /**
@@ -23,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+	    Schema::dropIfExists('usuarios');
     }
 };
