@@ -19,7 +19,7 @@ return new class extends Migration
 		    $table->string('descripcion');
 		    $table->string('precio');
 		    $table->string('foto');
-	    });	    
+	    });
     }
 
     /**

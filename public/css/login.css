@@ -3,21 +3,21 @@
 }
 
 body {
- background-color: #000000;
- opacity: 1;
- background-image:  linear-gradient(30deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(150deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(30deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(150deg, #563364 12%, transparent 12.5%, transparent 87%, #563364 87.5%, #563364), linear-gradient(60deg, #56336477 25%, transparent 25.5%, transparent 75%, #56336477 75%, #56336477), linear-gradient(60deg, #56336477 25%, transparent 25.5%, transparent 75%, #56336477 75%, #56336477);
- background-size: 80px 140px;
- background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+  background-color: #252525;
+  opacity: 1;
+  background-image:  linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077);
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
 
 .form-container {
   height:400px;
   width:350px;
   background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 
   top:50%;
@@ -30,17 +30,14 @@ body {
 }
 .icon-container {
   position:absolute;
-  width:150px;
-  height:150px;
   text-align:center;
-  left:77.5px; 
-  top:-70px;
+  left:39px;
+  top:-90px;
 }
 #icon {
-  background:black;
-  color:white;
+  width: 225px;
+  height: 225px;
   border-radius:100%;
-  font-size:150px;
 }
 input[type=text],input[type=password]{
   outline:none;
@@ -49,12 +46,10 @@ input[type=text],input[type=password]{
   font-size:20px;
   padding:5px;
 
-  background: #563364;
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 0px );
-  -webkit-backdrop-filter: blur( 0px );
-  border-radius: 30px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );	
+  background: #252525;
+
+  border-radius: 10px;
+
 }
 input[type=text]{
   margin-top:150px;
@@ -66,11 +61,22 @@ input[type=password]{
  text-align:left;
  margin-left:20px;
 }
-.form-container div a{ 
+.form-container div a{
  text-decoration:none;
  padding:5px;
- color:white;
+ text-decoration:none;
+ background: linear-gradient(to right,black,black 50%, white 50%);
+ background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-size: 200% 100%;
+ background-position: 100%;
+ transition: background-position 275ms ease;
+ text-decoration: none; // text decorations are clipped in WebKit browsers;
 }
+.form-container div a:hover {
+    background-position: 0 100%;
+  }
 button {
   margin-top:25px;
   padding:2.5px 5px;
@@ -87,24 +93,16 @@ button {
   background: rgba( 0, 0, 0, 0.75 );
   color:white;
   backdrop-filter: blur( 0px );
-  -webkit-backdrop-filter: 
+  -webkit-backdrop-filter:
   blur( 0px );
-  border: 4px solid rgba(31,38,135,0.37);
- 
+  border: none;
+
 }
 button:hover {
-  background-color: #5F0087;
-  color:white;
-  backdrop-filter: blur( 0px );
-  -webkit-backdrop-filter: 
-  blur( 0px );
-  border: 4px solid rgba(0,0,0,0.1);
-}
-button:hover #icon{
-	/*hacer que esta mierda funcione*/
-  background-color: #5F0087;
+  background-color: white;
   color:black;
+  backdrop-filter: blur( 0px );
+  -webkit-backdrop-filter:
+  blur( 0px );
+  border: 4px solid rgba( 0, 0, 0, 0.75 );
 }
-
-
-

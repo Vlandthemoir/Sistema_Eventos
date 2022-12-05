@@ -9,7 +9,7 @@
 		<div class="general-container">
 			<div class="form-container">
 				<div class="icon-container">
-					<i id="icon" class="fas fa-user-circle"></i>
+					<img id="icon" src="{{ asset('images/logo.png') }}">
 				</div>
 				<form method="POST" action="">
 					@csrf

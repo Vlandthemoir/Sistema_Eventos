@@ -17,9 +17,11 @@ return new class extends Migration
 		    $table->id();
 		    $table->string('nombre')->unique();
 		    $table->string('correo')->unique();
-		    $table->string('contrasena');
+		    $table->string('password');
 		    $table->string('rol')->default('Cliente');
-		    $table->timestamps();
+        $table->timestamp('fecha_creado')->nullable();
+        $table->timestamp('fecha_modificado')->nullable();
+
 	    });
     }
 

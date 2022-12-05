@@ -12,10 +12,40 @@ class Usuario extends Model
 	protected $fillable = [
 		'nombre',
 		'correo',
-		'contrasena',
+		'contraseña',
 	];
+	//cambio de nombre de las convenciones
 	protected $table = 'usuarios';
-	const CREATED_AT = 'fecha_creado';
-	const UPDATED_AT = 'fecha_actualizado';
+	   /**
+     * The name of the "created at" column.
+     *
+     * @var string
+     */
+    const CREATED_AT = 'fecha_creado';
+     /**
+     * The name of the "updated at" column.
+     *
+     * @var string
+     */
+		 const UPDATED_AT = 'fecha_modificado';
+		 /**
+ 	 	 * Get the login username to be used by the controller.
+ 		 *
+ 		 * @return string
+ 		 */
+		 public function username()
+		 {
+			 return 'nombre';
+		 }
+		 /**
+ 	 	 * Get the password for the user.
+ 		 *
+ 	 	 * @return string
+ 	 	 */
+		 public function getAuthPassword()
+		 {
+			 return $this->contraseña;
+		 }
+
 
 }
