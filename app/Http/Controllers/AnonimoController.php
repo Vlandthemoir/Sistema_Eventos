@@ -14,7 +14,8 @@ class AnonimoController extends Controller
      */
     public function index()
     {
-	    $datos  =
+      //aqui paso parametros a la vista home
+      return view('home');
     }
 
     /**
