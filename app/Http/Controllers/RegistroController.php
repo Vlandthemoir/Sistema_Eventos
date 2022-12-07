@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-//use App\Models\Usuario;
 use App\Models\User;
 class RegistroController extends Controller
 {
@@ -12,13 +11,13 @@ class RegistroController extends Controller
 	public function store(Request $request){
 
 		$this->validate(request(), [
-		'name' => 'required',
-		'email' => 'required|email',
-		'password' => 'required|confirmed',
+		'nombre' => 'required',
+		'correo' => 'required',
+		'contraseña' => 'required',
 		]);
 
-		$user = User::create(request(['name','email','password']));
-		auth()->login($user);
+		$user = User::create(request(['nombre','correo','contraseña']));
+
 		return redirect()->to('/');
 	}
 }

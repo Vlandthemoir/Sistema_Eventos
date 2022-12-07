@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AnonimoController;
-use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\PaquetesController;
@@ -15,12 +15,12 @@ Route::get('/', function () {
 Route::get('home',[AnonimoController::class,'index'])
 ->name('home');
 
-//rutas login
-Route::get('/login',[SessionsController::class,'create'])
+//rutas para el inicio de sesion
+Route::get('/login',[LoginController::class,'create'])
 	->name('login.index');
-Route::post('/login',[SessionsController::class,'store'])
+Route::post('/login',[LoginController::class,'store'])
 	->name('login.store');
-Route::get('/logout',[SessionsController::class,'destroy'])
+Route::get('/logout',[LoginController::class,'destroy'])
 	->name('login.destroy');
 
 //rutas para el registro de los clientes
@@ -52,5 +52,3 @@ Route::post('/create-paquetes', [PaquetesController::class, 'store'])
 ->name('paquetes.store');
 Route::delete('/destroy-paquetes/{id}', [PaquetesController::class, 'destroy'])
 ->name('paquetes.destroy');
-
-/**/

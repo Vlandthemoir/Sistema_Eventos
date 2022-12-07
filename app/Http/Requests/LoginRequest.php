@@ -8,66 +8,33 @@ use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 class LoginRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
-     *
      * @return bool
      */
     public function authorize()
     {
-        return true;
+        return true;//su valor es true para habilitar el uso de esta request
     }
 
     /**
-     * Get the validation rules that apply to the request.
-     *
      * @return array
      */
     public function rules()
     {
+      //aqui defino los datos que usara para
+      //autenticarse
         return [
-            'name' => 'required',
-            'password' => 'required'
+            'correo' => 'required',
+            'contraseña' => 'required'
         ];
     }
 
     /**
-     * Get the needed authorization credentials from the request.
-     *
      * @return array
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function getCredentials()
     {
-        // The form field for providing username or password
-        // have name of "username", however, in order to support
-        // logging users in with both (username and email)
-        // we have to check if user has entered one or another
-        $username = $this->get('name');
-
-        if ($this->isEmail($username)) {
-            return [
-                'email' => $username,
-                'password' => $this->get('password')
-            ];
-        }
-
-        return $this->only('name', 'password');
-    }
-
-    /**
-     * Validate if provided parameter is valid email.
-     *
-     * @param $param
-     * @return bool
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
-     */
-    private function isEmail($param)
-    {
-        $factory = $this->container->make(ValidationFactory::class);
-
-        return ! $factory->make(
-            ['name' => $param],
-            ['name' => 'email']
-        )->fails();
+      //aqui retorno las credenciales que se usaran en la autenticacion
+        return $this->only('correo', 'contraseña');
     }
 }

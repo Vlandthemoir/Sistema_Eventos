@@ -13,10 +13,10 @@
 				</div>
 				<form method="POST" action="">
 					@csrf
-					<input type="text" autocomplete="off" placeholder="Usuario" id="name" name="name">
-					<input type="email" autocomplete="off" placeholder="Correo Electronico" id="email" name="email">
-					<input type="password" placeholder="Contraseña" id="password" name="password">
-					<input type="password" placeholder="Confirmar contraseña" id="password_confirmation" name="password_confirmation">
+					<input type="text" autocomplete="off" placeholder="Usuario" id="nombre" name="nombre">
+					<input type="email" autocomplete="off" placeholder="Correo Electronico" id="correo" name="correo">
+					<input type="password" placeholder="Contraseña" id="contraseña" name="contraseña">
+					
 					<button type="submit">Registrarse</button>
 				</form>
 			</div>

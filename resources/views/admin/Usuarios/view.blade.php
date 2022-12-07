@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-
-
 @push('styles')
 	<link href="{{asset('css/Usuarios/view.css')}}" rel="stylesheet">
 @endpush
@@ -12,9 +10,9 @@
   </div>
 				<form method="POST" action="{{ route('usuarios.store') }}">
 					@csrf
-					<input type="text" autocomplete="off" placeholder="Nombre" id="name" name="name">
-					<input type="email" autocomplete="off" placeholder="Correo" id="email" name="email">
-					<input type="password" autocomplete="off" placeholder="Contraseña" id="password" name="password">
+					<input type="text" autocomplete="off" placeholder="Nombre" id="nombre" name="nombre">
+					<input type="email" autocomplete="off" placeholder="Correo" id="correo" name="correo">
+					<input type="password" autocomplete="off" placeholder="Contraseña" id="contraseña" name="contraseña">
           <div class="radio">
           <label>Rol del usuario</label>
           <label class="container">Cliente
@@ -47,9 +45,9 @@
 					<tbody>
 						@foreach ($datos as $item)
 							<tr>
-								<td>{{ $item->name }}</td>
-								<td>{{ $item->email }}</td>
-								<td>{{ $item->password }}</td>
+								<td>{{ $item->nombre }}</td>
+								<td>{{ $item->correo }}</td>
+								<td>{{ $item->contraseña }}</td>
                 <td>{{ $item->rol }}</td>
 								<td>
 									<form action="{{ route('usuarios.edit', $item->id) }}" method="GET">
@@ -74,7 +72,5 @@
 					</tbody>
 				</table>
 			</div>
-
-
 
 @endsection

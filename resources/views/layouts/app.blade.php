@@ -14,7 +14,7 @@
 			@auth
 				@switch(auth()->user()->rol)
 					@case("Cliente")
-					<span><i class="fas fa-user"></i> Bienvenido <b>{{ auth()->user()->name }}</b></span>
+					<span><i class="fas fa-user"></i> Bienvenido <b>{{ auth()->user()->nombre }}</b></span>
 					<span class="menu"><a href=""><i class="fa-regular fa-calendar-plus"></i><b>Crear Eventos</b></a></span>
 					<span class="menu"><a href=""><i class="fa-regular fa-calendar-days"></i><b>Mis Eventos</b></a></span>
 					<span class="menu"><a href=""><i class="fa-regular fa-address-card"></i><b>Perfil</b></a></span>
@@ -23,7 +23,7 @@
 					</div>
 						@break
 					@case("Empleado")
-					<span><i class="fa-solid fa-user-gear"></i> Bienvenido <b>{{ auth()->user()->name }}</b></span>
+					<span><i class="fa-solid fa-user-gear"></i> Bienvenido <b>{{ auth()->user()->nombre }}</b></span>
 					<span class="menu"><a href=""><i class="fa-regular fa-calendar"></i><b>Eventos</b></a></span>
 					<span class="menu"><a href=""><i class="fa-regular fa-address-card"></i><b>Perfil</b></a></span>
 					<div class="icon-container" >
@@ -31,7 +31,7 @@
 					</div>
 						@break
 					@case("Administrador")
-					<span><i class="fa-solid fa-user-tie"></i> Bienvenido <b>{{ auth()->user()->name }}</b></span>
+					<span><i class="fa-solid fa-user-tie"></i> Bienvenido <b>{{ auth()->user()->nombre }}</b></span>
 					<span class="menu"><a href="{{route('usuarios.index')}}"><i class="fa-solid fa-users-gear"></i><b>Usuarios</b></a></span>
 					<span class="menu"><a href="{{route('paquetes.index')}}"><i class="fa-solid fa-toolbox"></i><b>Paquetes</b></a></span>
 					<span class="menu"><a href=""><i class="fa-solid fa-wrench"></i><b>Servicios</b></a></span>
@@ -43,7 +43,7 @@
 						@break
 				@endswitch
 			@endauth
-			
+
 		</div>
 		<div class="general-container">
 			@yield('content')

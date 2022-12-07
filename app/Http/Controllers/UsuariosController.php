@@ -37,9 +37,9 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
     $user = new User();
-		$user->name = $request->input('name');
-		$user->email = $request->input('email');
-		$user->password = $request->input('password');
+		$user->nombre = $request->input('nombre');
+		$user->correo = $request->input('correo');
+		$user->contraseña = $request->input('contraseña');
 		$user->rol = $request->input('rol');
 		$user->save();
 		return redirect()->route("usuarios.index");
@@ -78,9 +78,9 @@ class UsuariosController extends Controller
     public function update(Request $request, $id)
     {
   $user = User::find($id);
-	$user->name = $request->input('name');
-	$user->email = $request->input('email');
-  $user->password = $request->input('password');
+	$user->nombre = $request->input('nombre');
+	$user->correo = $request->input('correo');
+  $user->contraseña = $request->input('contraseña');
   $user->rol = $request->input('rol');
 	$user->save();
 	return redirect()->route("usuarios.index");

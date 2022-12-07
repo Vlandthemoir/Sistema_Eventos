@@ -13,8 +13,8 @@
 				</div>
 				<form method="POST" action="/login">
 					@csrf
-					<input autocomplete="off" type="text" placeholder="Usuario" id="name" name="name" required>
-					<input type="password" placeholder="Contraseña" id="password" name="password" required>
+					<input autocomplete="off" type="text" placeholder="Usuario" id="name" name="correo" required>
+					<input type="password" placeholder="Contraseña" id="password" name="contraseña" required>
 					<div><a href="/register" ><b>¿No tienes una cuenta?</b></a></div>
 					<button type="submit">Iniciar</button>
 				</form>

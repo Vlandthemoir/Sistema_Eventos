@@ -8,14 +8,14 @@
 @section('content')
 <div class="form-container">
   <div class="title-container-form">
-    <h1 class="title">Editar usuario</h1>
+    <h1 class="title">Actualizar usuario</h1>
   </div>
 				<form method="POST" action="{{route('usuarios.update',$user->id)}}">
 					@csrf
           @method("PUT")
-					<input type="text" autocomplete="off" placeholder="Nombre" id="name" name="name" value="{{$user->name}}">
-					<input type="email" autocomplete="off" placeholder="Correo" id="email" name="email" value="{{$user->email}}">
-					<input type="password" autocomplete="off" placeholder="Contraseña" id="password" name="password" value="{{$user->password}}">
+					<input type="text" autocomplete="off" placeholder="Nombre" id="name" name="name" value="{{$user->nombre}}">
+					<input type="email" autocomplete="off" placeholder="Correo" id="email" name="email" value="{{$user->correo}}">
+					<input type="password" autocomplete="off" placeholder="Contraseña" id="password" name="password" value="{{$user->contraseña}}">
           <div class="radio">
           <label>Rol del usuario</label>
           <label class="container">Cliente
