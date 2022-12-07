@@ -10,17 +10,6 @@ class RegistroController extends Controller
 		return view('auth.register');
 	}
 	public function store(Request $request){
-		/*$usuario = new User();
-		$usuario->name = $request->post('name');
-		$usuario->email = $request->post('email');
-		$usuario->password = $request->post('password');
-
-		$usuario->save();
-		return redirect()->to('/');
-*/
-
-
-
 
 		$this->validate(request(), [
 		'name' => 'required',

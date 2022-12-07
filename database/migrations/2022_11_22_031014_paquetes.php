@@ -19,6 +19,8 @@ return new class extends Migration
 		    $table->string('descripcion');
 		    $table->string('precio');
 		    $table->string('foto');
+        $table->timestamp('fecha_creado')->nullable();
+        $table->timestamp('fecha_modificado')->nullable();
 	    });
     }
 

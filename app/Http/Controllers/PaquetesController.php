@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Paquete;
 class PaquetesController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class PaquetesController extends Controller
      */
     public function index()
     {
-        //
+        //return view('admin.Paquetes.view');
+      $datos = Paquete::orderBy('id', 'desc')->paginate(10);
+	    return view('admin.Paquetes.view', compact('datos'));
     }
 
     /**
@@ -34,7 +36,13 @@ class PaquetesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    $paquetes = new Paquetes();
+		$paquetes->nombre = $request->post('nombre');
+		$paquetes->descripcion = $request->post('descripcion');
+		$paquetes->precio = $request->post('precio');
+		$paquetes->foto = $request->post('foto');
+		$paquetes->save();
+		return redirect()->route("paquetes.index");
     }
 
     /**

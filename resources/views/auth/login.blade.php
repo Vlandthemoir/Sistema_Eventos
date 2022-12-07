@@ -11,7 +11,7 @@
 				<div class="icon-container">
 					<img id="icon" src="{{ asset('images/logo.png') }}">
 				</div>
-				<form method="POST" action="">
+				<form method="POST" action="/login">
 					@csrf
 					<input autocomplete="off" type="text" placeholder="Usuario" id="name" name="name" required>
 					<input type="password" placeholder="Contraseña" id="password" name="password" required>
