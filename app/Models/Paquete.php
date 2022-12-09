@@ -13,7 +13,6 @@ class Paquete extends Model
 		'nombre',
 		'descripcion',
 		'precio',
-		'foto',
 	];
 	//cambio de nombre de las convenciones
 	protected $table = 'paquetes';

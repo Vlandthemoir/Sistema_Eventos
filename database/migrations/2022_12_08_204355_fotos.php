@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-	    Schema::create('paquetes',function(Blueprint $table){
+      Schema::create('fotos',function(Blueprint $table){
 		    $table->id();
-		    $table->string('nombre')->unique();
-		    $table->string('descripcion');
-		    $table->string('precio');
+		    $table->string('id_usuario')->unique();
+		    $table->string('nombre');
+        $table->string('url');
+		    $table->string('tipo');
         $table->timestamp('fecha_creado')->nullable();
         $table->timestamp('fecha_modificado')->nullable();
 	    });
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-	    Schema::dropIfExists('paquetes');
+      Schema::dropIfExists('fotos');
     }
 };

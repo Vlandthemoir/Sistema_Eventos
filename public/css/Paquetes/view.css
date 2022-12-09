@@ -122,6 +122,13 @@ button:hover {
 
   width:900px;
 }
+.table-container table thead th {
+  color:white;
+  font-size: 20px;
+}
+.table-container table tbody tr td {
+  color:white;
+}
 /*title text table*/
 .title-container-table {
   position: absolute;

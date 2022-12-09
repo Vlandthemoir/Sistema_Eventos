@@ -41,6 +41,7 @@
 						<th>Correo</th>
 						<th>Contraseña</th>
             <th>Rol</th>
+						<th colspan="2">Acciones</th>
 					</thead>
 					<tbody>
 						@foreach ($datos as $item)

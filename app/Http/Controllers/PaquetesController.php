@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paquete;
+use App\Models\Foto;
+
 class PaquetesController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class PaquetesController extends Controller
      */
     public function index()
     {
-        //return view('admin.Paquetes.view');
+
       $datos = Paquete::orderBy('id', 'desc')->paginate(10);
 	    return view('admin.Paquetes.view', compact('datos'));
     }
@@ -36,11 +38,10 @@ class PaquetesController extends Controller
      */
     public function store(Request $request)
     {
-    $paquetes = new Paquetes();
+    $paquetes = new Paquete();
 		$paquetes->nombre = $request->post('nombre');
 		$paquetes->descripcion = $request->post('descripcion');
 		$paquetes->precio = $request->post('precio');
-		$paquetes->foto = $request->post('foto');
 		$paquetes->save();
 		return redirect()->route("paquetes.index");
     }
@@ -64,7 +65,8 @@ class PaquetesController extends Controller
      */
     public function edit($id)
     {
-        //
+      $paquetes = Paquete::findOrFail($id);
+      return view("admin.Paquetes.update" , compact('paquetes'));
     }
 
     /**
@@ -76,7 +78,12 @@ class PaquetesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $paquetes = Paquete::find($id);
+  		$paquetes->nombre = $request->input('nombre');
+  		$paquetes->descripcion = $request->input('descripcion');
+  		$paquetes->precio = $request->input('precio');
+  		$paquetes->save();
+  		return redirect()->route("paquetes.index");
     }
 
     /**
@@ -87,6 +94,8 @@ class PaquetesController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $paquetes = Paquete::find($id);
+    	$paquetes->delete();
+    	return redirect()->route("paquetes.index");
     }
 }
