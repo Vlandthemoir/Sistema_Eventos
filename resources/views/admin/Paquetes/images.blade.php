@@ -16,6 +16,17 @@
 					<input type="text" autocomplete="off" placeholder="Nombre" id="nombre" name="nombre">
 					<input type="text" autocomplete="off" placeholder="Descripcion" id="descripcion" name="descripcion">
 					<input type="file" id="foto" name="foto">
+					<div class="radio">
+          <label>Tipo de foto</label>
+          <label class="container">Portada
+            <input type="checkbox" name="tipo" value="Portada">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Recurso
+            <input type="checkbox" name="tipo" value="Recurso">
+            <span class="checkmark"></span>
+          </label>
+          </div>
 					<button type="submit">Guardar</button>
 				</form>
 
@@ -36,6 +47,9 @@
     <p>
         <div class="box">
           {{ $item->descripcion }}
+        </div>
+				<div class="box">
+          Tipo:{{ $item->tipo }}
         </div>
         <form action="{{ route('paquetes.deleteimg', $item->id)}}" method="POST">
           @csrf

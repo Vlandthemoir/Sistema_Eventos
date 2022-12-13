@@ -22,6 +22,7 @@
   </div>
 				<table>
 					<thead>
+						<th>ID</th>
 						<th>Nombre</th>
 						<th>Descripcion</th>
 						<th>Precio</th>
@@ -30,9 +31,10 @@
 					<tbody>
 						@foreach ($datos as $item)
 							<tr>
+								<td>{{ $item->id }}</td>
 								<td>{{ $item->nombre }}</td>
 								<td>{{ $item->descripcion }}</td>
-								<td>{{ $item->precio }}</td>
+								<td>${{ $item->precio }}</td>
                 <td>
 									<form action="{{ route('paquetes.img', $item->id) }}" method="GET">
 										<button>

@@ -10,13 +10,14 @@ class Foto extends Model
     use HasFactory;
 
     protected $fillable = [
-      'id_paquete',
+      'id_categoria',
   		'id_usuario',
   		'nombre',
       'descripcion',
       'url',
-  		'tipo',
-      
+  		'categoria',
+      'tipo',
+
   	];
   	//cambio de nombre de las convenciones
   	protected $table = 'fotos';

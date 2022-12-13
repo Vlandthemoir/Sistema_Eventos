@@ -7,20 +7,7 @@
 @endpush
 
 @section('content')
-
-@auth
-	<div class="title"><h1>Proximamente a la venta gracias por registrarte</h1></div>
-@endauth
-
-@guest
-<div class="title"><h1>Registrate para comprar</h1></div>
-@endguest
-
-
-
-
-
-
-	<div class="table">
-	</div>
+<div class="body">
+	<a class="a">BIENVENIDO</a>
+</div>
 @endsection

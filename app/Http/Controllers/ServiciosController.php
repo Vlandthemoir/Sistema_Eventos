@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Servicio;
 
 class ServiciosController extends Controller
 {
@@ -13,9 +14,8 @@ class ServiciosController extends Controller
      */
     public function index()
     {
-      //$datos = Paquete::orderBy('id', 'desc')->paginate(10);
-	    //return view('admin.Paquetes.view', compact('datos'));
-      return view('admin.Servicios.view');
+      $datos = Servicio::orderBy('id', 'desc')->paginate(100);
+	    return view('admin.Servicios.view', compact('datos'));
     }
 
     /**
@@ -36,7 +36,12 @@ class ServiciosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $servicio = new Servicio();
+  		$servicio->nombre = $request->post('nombre');
+  		$servicio->descripcion = $request->post('descripcion');
+  		$servicio->precio = $request->post('precio');
+  		$servicio->save();
+      return redirect()->route("servicios.index");
     }
 
     /**
@@ -58,7 +63,8 @@ class ServiciosController extends Controller
      */
     public function edit($id)
     {
-        //
+      $servicios = Servicio::findOrFail($id);
+      return view("admin.Servicios.update" , compact('servicios'));
     }
 
     /**
@@ -70,7 +76,12 @@ class ServiciosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $servicio = Servicio::find($id);
+  		$servicio->nombre = $request->input('nombre');
+  		$servicio->descripcion = $request->input('descripcion');
+  		$servicio->precio = $request->input('precio');
+  		$servicio->save();
+  		return redirect()->route("servicios.index");
     }
 
     /**
@@ -81,6 +92,9 @@ class ServiciosController extends Controller
      */
     public function destroy($id)
     {
-        //
+      //$foto = DB::table('fotos')->where('id_paquete', '=', $id)->delete();
+      //elimino el paquete
+      $servicio = Servicio::find($id);
+    	$servicio->delete();
     }
 }

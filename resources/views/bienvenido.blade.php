@@ -15,13 +15,13 @@
 			</div>
 			@guest
 			<div class="buttons-container">
-				<a href="{{ route('home')}}"  class="button" style="vertical-align:middle"><span><b>Continuar</b></span></a>
+				<a href="/home"  class="button" style="vertical-align:middle"><span><b>Continuar</b></span></a>
 				<a href="{{ route('login.index')  }}" class="button" style="vertical-align:middle"><span><b>Iniciar Sesión</b></span></a>
 			</div>
 			@endguest
 			@auth
 			<div class="buttons-container">
-				<a href="{{ route('home')}}"  class="button" style="vertical-align:middle"><span><b>Continuar</b></span></a>
+				<a href="/home"  class="button" style="vertical-align:middle"><span><b>Continuar</b></span></a>
 			</div>
 			@endauth
 		</div>

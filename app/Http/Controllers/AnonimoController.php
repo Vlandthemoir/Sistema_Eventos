@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paquete;
+use Illuminate\Support\Facades\DB;
 
 class AnonimoController extends Controller
 {
@@ -14,7 +15,16 @@ class AnonimoController extends Controller
      */
     public function index()
     {
-      return view('home');
+      $datos = DB::table('paquetes')
+            ->join('fotos','paquetes.id', '=', 'fotos.id_categoria')
+            ->where('fotos.tipo', '=', 'Portada')
+            ->select('paquetes.nombre','paquetes.descripcion','paquetes.precio','fotos.url')
+            ->get();
+
+
+
+      //SELECT paquetes.nombre, paquetes.descripcion,paquetes.precio,fotos.url from paquetes inner JOIN fotos WHERE fotos.tipo = 'Portada' AND paquetes.id = fotos.id_categoria;
+	    return view('anonimo.view', compact('datos'));
     }
 
     /**

@@ -1,91 +1,34 @@
-
-.title {
-  text-align:center;
-}
-.title h1 {
-  color:white;
-  font-size:50px;
-}
-
-.general-container{
-  padding-top: 25px;
-}
-
-.table {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.card {
-  position: relative;
-  width: 250px;
-  height: 300px;
-  margin: 20px;
-}
-.card .face{
-  position: absolute;
+.body {
+  top: 70%;
+  left: 50%;
   width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: .5s;
-}
-.card .front {
-    transform: perspective(600px) rotateY(0deg);
-    box-shadow: 0 5px 10px #000;
-}
-.card .front img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.card .front h3 {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 45px;
-    line-height: 45px;
-    color: white;
-    background: rgba(0,0,0,.4);
-    text-align: center;
-}
-.card .back {
-    transform: perspective(600px) rotateY(180deg);
-    background: rgb(3, 35, 54);
-    padding: 15px;
-    color: #f3f3f3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 5px 10px #000;
-}
-.card .back h3 {
-    font-size: 30px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
-.card .back p {
-    letter-spacing: 1px;
-}
-.card:hover .front {
-    transform: perspective(600px) rotateY(180deg);
-}
-.card:hover .back {
-    transform: perspective(600px) rotateY(360deg);
-}
-.box {
+  height: 500px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
   text-align: center;
+}
+.body  {
+  color:white;
+}
+.a {
+  font-family:sans-serif;
+  position: relative;
+  display: inline-block;
+  font-size: 170px;
+  font-weight: 800;
+
+  overflow: hidden;
+  background: linear-gradient(to right,blue,blue 50%, white 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  text-decoration: none; // text decorations are clipped in WebKit browsers;
 
 }
-@media(max-width:991px){
- .general-container {
- margin-top:-50px; 
- }
-}
+.a:hover {
+    background-position: 0 100%;
+  }

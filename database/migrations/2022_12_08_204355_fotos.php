@@ -15,12 +15,13 @@ return new class extends Migration
     {
       Schema::create('fotos',function(Blueprint $table){
 		    $table->id();
-        $table->string('id_paquete');
+        $table->string('id_categoria');
 		    $table->string('id_usuario');
 		    $table->string('nombre');
         $table->string('descripcion');
         $table->string('url');
-		    $tabletable->string('tipo');
+		    $table->string('categoria');
+        $table->string('tipo');
         $table->timestamp('fecha_creado')->nullable();
         $table->timestamp('fecha_modificado')->nullable();
 	    });

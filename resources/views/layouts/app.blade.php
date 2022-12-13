@@ -10,6 +10,8 @@
 		<div class="navbar">
 			@guest
 			<span><i class="fas fa-user-secret"></i> Bienvenido<b> Anonimo</b></span>
+			<span class="menu"><a href="{{route('anonimo.paquete')}}"><i class="fa-solid fa-toolbox"></i><b>Paquetes</b></a></span>
+
 			@endguest
 			@auth
 				@switch(auth()->user()->rol)

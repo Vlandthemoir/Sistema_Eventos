@@ -17,7 +17,7 @@ return new class extends Migration
 		    $table->id();
 		    $table->string('nombre')->unique();
 		    $table->string('descripcion');
-		    $table->string('precio');
+		    $table->double('precio', 8, 2);
         $table->timestamp('fecha_creado')->nullable();
         $table->timestamp('fecha_modificado')->nullable();
 	    });
