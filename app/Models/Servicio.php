@@ -5,21 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Foto extends Model
+class Servicio extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-      'id_paquete',
-  		'id_usuario',
   		'nombre',
-      'descripcion',
-      'url',
-  		'tipo',
-      
+  		'descripcion',
+  		'precio',
   	];
-  	//cambio de nombre de las convenciones
-  	protected $table = 'fotos';
+    //cambio de nombre de las convenciones
+  	protected $table = 'servicios';
   		 /**
   		 * The name of the "created at" column.
   		 *

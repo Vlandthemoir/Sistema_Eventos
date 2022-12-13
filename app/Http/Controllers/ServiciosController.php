@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Paquete;
-use App\Models\Foto;
-use Illuminate\Support\Facades\DB;
 
-class PaquetesController extends Controller
+class ServiciosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +13,9 @@ class PaquetesController extends Controller
      */
     public function index()
     {
-
-      $datos = Paquete::orderBy('id', 'desc')->paginate(10);
-	    return view('admin.Paquetes.view', compact('datos'));
+      //$datos = Paquete::orderBy('id', 'desc')->paginate(10);
+	    //return view('admin.Paquetes.view', compact('datos'));
+      return view('admin.Servicios.view');
     }
 
     /**
@@ -39,17 +36,7 @@ class PaquetesController extends Controller
      */
     public function store(Request $request)
     {
-      //se guardan los datos del paquete
-    $paquetes = new Paquete();
-		$paquetes->nombre = $request->post('nombre');
-		$paquetes->descripcion = $request->post('descripcion');
-		$paquetes->precio = $request->post('precio');
-		$paquetes->save();
-
-    //$foto =  new Foto();
-    //$foto->id_paquete = $request->post('nombre');
-
-		return redirect()->route("paquetes.index");
+        //
     }
 
     /**
@@ -71,8 +58,7 @@ class PaquetesController extends Controller
      */
     public function edit($id)
     {
-      $paquetes = Paquete::findOrFail($id);
-      return view("admin.Paquetes.update" , compact('paquetes'));
+        //
     }
 
     /**
@@ -84,15 +70,7 @@ class PaquetesController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $paquetes = Paquete::find($id);
-  		$paquetes->nombre = $request->input('nombre');
-  		$paquetes->descripcion = $request->input('descripcion');
-  		$paquetes->precio = $request->input('precio');
-  		$paquetes->save();
-  		return redirect()->route("paquetes.index");
-
-
-
+        //
     }
 
     /**
@@ -103,14 +81,6 @@ class PaquetesController extends Controller
      */
     public function destroy($id)
     {
-      //elimino las fotos que le pertenecen al paquete
-      $foto = DB::table('fotos')->where('id_paquete', '=', $id)->delete();
-      //elimino el paquete
-      $paquetes = Paquete::find($id);
-    	$paquetes->delete();
-
-
-
-    	return redirect()->route("paquetes.index");
+        //
     }
 }

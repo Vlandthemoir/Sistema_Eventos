@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\PaquetesController;
+use App\Http\Controllers\ServiciosController;
+use App\Http\Controllers\FotosController;
 
 Route::get('/', function () {
     return view('bienvenido');
@@ -41,7 +43,7 @@ Route::post('/create-usuarios', [UsuariosController::class, 'store'])
 Route::delete('/destroy-usuarios/{id}', [UsuariosController::class, 'destroy'])
 ->name('usuarios.destroy');
 
-//rutas para el registro de paquetes
+//rutas para los paquetes
 Route::get('/register-paquetes', [PaquetesController::class, 'index'])
 ->name('paquetes.index');
 Route::get('/edit-paquetes/{id}', [PaquetesController::class, 'edit'])
@@ -52,3 +54,22 @@ Route::post('/create-paquetes', [PaquetesController::class, 'store'])
 ->name('paquetes.store');
 Route::delete('/destroy-paquetes/{id}', [PaquetesController::class, 'destroy'])
 ->name('paquetes.destroy');
+//rutas para las imagenes de los paquetes
+Route::get('/img-paquetes/{id}', [FotosController::class, 'index_paquetes'])
+->name('paquetes.img');
+Route::post('/storeimg-paquetes', [FotosController::class, 'store_paquetes'])
+->name('paquetes.storeimg');
+Route::delete('/deleteimg-paquetes/{id}', [FotosController::class, 'delete_paquetes'])
+->name('paquetes.deleteimg');
+
+//rutas para los servicios
+Route::get('/register-servicios', [ServiciosController::class, 'index'])
+->name('servicios.index');
+/*Route::get('/edit-paquetes/{id}', [PaquetesController::class, 'edit'])
+->name('paquetes.edit');
+Route::put('/update-paquetes/{id}', [PaquetesController::class, 'update'])
+->name('paquetes.update');
+Route::post('/create-paquetes', [PaquetesController::class, 'store'])
+->name('paquetes.store');
+Route::delete('/destroy-paquetes/{id}', [PaquetesController::class, 'destroy'])
+->name('paquetes.destroy');*/

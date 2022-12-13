@@ -25,7 +25,6 @@
 						<th>Nombre</th>
 						<th>Descripcion</th>
 						<th>Precio</th>
-
 						<th colspan="3">Acciones</th>
 					</thead>
 					<tbody>
@@ -35,7 +34,7 @@
 								<td>{{ $item->descripcion }}</td>
 								<td>{{ $item->precio }}</td>
                 <td>
-									<form action="" method="GET">
+									<form action="{{ route('paquetes.img', $item->id) }}" method="GET">
 										<button>
 											<i class="fas fa-image"></i>
 											añadir fotos
